@@ -1,5 +1,17 @@
 angular
     .module('ck32', ['ngMaterial'])
+    .config(function ($mdThemingProvider) {
+        $mdThemingProvider.theme('soft')
+            .primaryPalette('light-blue')
+            .accentPalette('purple')
+            .warnPalette('pink')
+            .backgroundPalette('grey');
+        $mdThemingProvider.theme('normal')
+            .primaryPalette('indigo')
+            .accentPalette('pink')
+            .warnPalette('red')
+            .backgroundPalette('blue-grey');
+    })
     .config(function ($mdIconProvider) {
         $mdIconProvider
             .iconSet('action', 'img/iconsets/action-icons.svg', 24)
