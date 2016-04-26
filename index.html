@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Angular Material style sheet -->
     <link rel="stylesheet" href="css/angular-material/angular-material.css">
+    <link rel="stylesheet" href="css/angular-material/angular-material-sidenav.css">
     <link rel="stylesheet" href="css/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="css/ck32_styles/ck32.css">
     <!-- Angular Material requires Angular.js Libraries -->
@@ -11,175 +12,48 @@
     <script src="js/angular/angular-animate.min.js"></script>
     <script src="js/angular/angular-aria.min.js"></script>
     <script src="js/angular/angular-messages.min.js"></script>
+    <script src="js/angular/angular-route.js"></script>
+    <script src="js/angular/angular-ui-router.min.js"></script>
 
     <!-- Angular Material Library -->
     <script src="js/angular-material/angular-material.js"></script>
+    <script src="js/angular-material/angular-material-sidenav.js"></script>
 
     <!-- Your application bootstrap  -->
     <script src="js/ck32_app/ck32.js"></script>
+    <script src="snipets/themes/theme.js"></script>
 </head>
 
-<body ng-cloak md-theme="soft">
-    <div ng-controller="DemoBasicCtrl as ctrl" ng-cloak>
-        <md-toolbar class="md-menu-toolbar">
-            <div layout="row">
-                <md-toolbar-filler layout layout-align="center center">
-                    <i class="fa fa-book fa-2x"></i>
-                </md-toolbar-filler>
-                <div style="width=100%">
-                    <h2 class="md-toolbar-tools">Untitled document</h2>
-                    <md-menu-bar>
-                        <md-menu>
-                            <button class="fa fa-bars" ng-click="$mdOpenMenu()">
-                                theme
-                            </button>
-                            <md-menu-content>
-                                <md-menu-item>
-                                    <md-button href="#">
-                                        Share...
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-divider></md-menu-divider>
-                                <md-menu-item>
-                                    <md-menu>
-                                        <md-button ng-click="$mdOpenMenu()">New</md-button>
-                                        <md-menu-content>
-                                            <md-menu-item>
-                                                <md-button href="#">Document</md-button>
-                                            </md-menu-item>
-                                            <md-menu-item>
-                                                <md-button href="#">Spreadsheet</md-button>
-                                            </md-menu-item>
-                                            <md-menu-item>
-                                                <md-button href="#">Presentation</md-button>
-                                            </md-menu-item>
-                                            <md-menu-item>
-                                                <md-button href="#">Form</md-button>
-                                            </md-menu-item>
-                                            <md-menu-item>
-                                                <md-button href="#">Drawing</md-button>
-                                            </md-menu-item>
-                                        </md-menu-content>
-                                    </md-menu>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button href="#">
-                                        Open...
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-item>
-                                    <md-button disabled="disabled" href="#">
-                                        Rename
-                                    </md-button>
-                                </md-menu-item>
-                                <md-menu-divider></md-menu-divider>
-                                <md-menu-item>
-                                    <md-button href="#">
-                                        Print
-                                        <span class="md-alt-text">alt-text</span>
-                                    </md-button>
-                                </md-menu-item>
-                            </md-menu-content>
-                        </md-menu>
-                    </md-menu-bar>
-                </div>
+<body ng-cloak md-theme="soft" md-theme-watch>
+    <div ng-controller="BasicCtrl as ctrl" ng-cloak>
+        <md-toolbar class="md-hue-2">
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" ng-click="toggleLeft()" aria-label="Settings">
+                    <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+                </md-button>
+                <h2>
+          <span>Toolbar with Disabled/Enabled Icon Buttons</span>
+        </h2>
+                <span flex></span>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                    <i class="fa fa-bell fa-2x"></i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="More">
+                    <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
+                </md-button>
             </div>
         </md-toolbar>
+        <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
+            <md-toolbar class="md-hue-2">
+                <h1 class="md-toolbar-tools">Sidenav Left</h1>
+            </md-toolbar>
+            <md-divider></md-divider>
+            <md-content layout-padding>
+                <ss-sidenav menu="menu"></ss-sidenav>
+            </md-content>
+        </md-sidenav>
         <br>
-        <div md-theme="soft">
-            <md-toolbar class="md-primary">
-                <div class="md-toolbar-tools">
-                    <h2 class="md-flex">Soft Theme</h2></div>
-            </md-toolbar>
-            <hr/>
-            <md-card>
-                <md-card-content layout="column">
-                    <md-toolbar class="md-primary">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-primary style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-primary md-hue-1">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-primary md-hue-1 style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-primary md-hue-2">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-primary md-hue-2 style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-accent">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-accent style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-accent md-hue-1">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-accent md-hue-1 style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-accent md-hue-2">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-accent md-hue-2 style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-warn">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-warn style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-warn md-hue-1">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-warn md-hue-1 style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-warn md-hue-2">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-warn md-hue-2 style</h2></div>
-                    </md-toolbar>
-                </md-card-content>
-            </md-card>
-        </div>
-        <div md-theme="normal">
-            <md-toolbar class="md-primary">
-                <div class="md-toolbar-tools">
-                    <h2 class="md-flex">Normal Theme</h2></div>
-            </md-toolbar>
-            <hr/>
-            <md-card>
-                <md-card-content layout="column">
-                    <md-toolbar class="md-primary">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-primary style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-primary md-hue-1">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-primary md-hue-1 style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-primary md-hue-2">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-primary md-hue-2 style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-accent">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-accent style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-accent md-hue-1">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-accent md-hue-1 style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-accent md-hue-2">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-accent md-hue-2 style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-warn">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-warn style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-warn md-hue-1">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-warn md-hue-1 style</h2></div>
-                    </md-toolbar>
-                    <md-toolbar class="md-warn md-hue-2">
-                        <div class="md-toolbar-tools">
-                            <h2 class="md-flex">Using md-warn md-hue-2 style</h2></div>
-                    </md-toolbar>
-                </md-card-content>
-            </md-card>
-        </div>
+        <div ng-view></div>
     </div>
 </body>
 
