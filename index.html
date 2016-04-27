@@ -2,81 +2,49 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Angular Material style sheet -->
-    <link rel="stylesheet" href="css/angular-material/angular-material.css">
-    <link rel="stylesheet" href="css/angular-material/angular-material-sidenav.css">
+    <!-- bootstrap make-up -->
     <link rel="stylesheet" href="css/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/boostrap/bootstrap.min.css">
+    <!-- ck32 make-up -->
     <link rel="stylesheet" href="css/ck32_styles/ck32.css">
-    <!-- Angular Material requires Angular.js Libraries -->
+
+    <!-- Angular and bootstrap spellbooks -->
     <script src="js/angular/angular.min.js"></script>
     <script src="js/angular/angular-animate.min.js"></script>
-    <script src="js/angular/angular-aria.min.js"></script>
-    <script src="js/angular/angular-messages.min.js"></script>
     <script src="js/angular/angular-route.js"></script>
-    <script src="js/angular/angular-ui-router.min.js"></script>
+    <script src="js/bootstrap/ui-bootstrap-1.3.2.min.js"></script>
 
-    <!-- Angular Material Library -->
-    <script src="js/angular-material/angular-material.js"></script>
-    <script src="js/angular-material/angular-material-sidenav.js"></script>
-
-    <!-- Your application bootstrap  -->
+    <!-- ck32 spellbook  -->
     <script src="js/ck32_app/ck32.js"></script>
-    <script src="snipets/themes/theme.js"></script>
+
 </head>
 
-<body ng-cloak md-theme="soft" md-theme-watch>
-    <div ng-controller="BasicCtrl as ctrl" ng-cloak>
-        <md-toolbar class="md-hue-2">
-            <div class="md-toolbar-tools">
-                <md-button class="md-icon-button" ng-click="toggleLeft()" aria-label="Settings">
-                    <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-                </md-button>
-                <h2>
-          <span>Toolbar with Disabled/Enabled Icon Buttons</span>
-        </h2>
-                <span flex></span>
-                <md-button class="md-icon-button" aria-label="Favorite">
-                    <i class="fa fa-bell fa-2x"></i>
-                </md-button>
-                <md-button class="md-icon-button" aria-label="More">
-                    <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
-                </md-button>
+<body ng-controller="BasicCtrl as ctrl" ng-cloak>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand fa fa-bars fa-lg" href="#home">&nbsp;Herramientas administrativas</a>
             </div>
-        </md-toolbar>
-        <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="left">
-            <md-toolbar class="md-hue-2">
-                <h1 class="md-toolbar-tools">Sidenav Left</h1>
-            </md-toolbar>
-            <md-divider></md-divider>
-            <md-content layout-padding>
-                <div id='cssmenu'>
-                    <ul>
-                        <li><a href='#'><span>Home</span></a></li>
-                        <li class='active has-sub'><a href='#'><span>Products</span></a>
-                            <ul>
-                                <li class='has-sub'><a href='#'><span>Product 1</span></a>
-                                    <ul>
-                                        <li><a href='#'><span>Sub Product</span></a></li>
-                                        <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                                    </ul>
-                                </li>
-                                <li class='has-sub'><a href='#'><span>Product 2</span></a>
-                                    <ul>
-                                        <li><a href='#'><span>Sub Product</span></a></li>
-                                        <li class='last'><a href='#'><span>Sub Product</span></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href='#'><span>About</span></a></li>
-                        <li class='last'><a href='#'><span>Contact</span></a></li>
-                    </ul>
-                </div>
-            </md-content>
-        </md-sidenav>
-        <br>
-        <div ng-view></div>
-    </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="navbar-brand">
+                    <div uib-dropdown>
+                        <i class="fa fa-bell" uib-dropdown-toggle></i>
+                        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-single-button">
+                            <li role="menuitem"><a href="#">Action</a></li>
+                            <li role="menuitem"><a href="#">Another action</a></li>
+                            <li role="menuitem"><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li role="menuitem"><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="navbar-brand">
+
+                </li>
+            </ul>
+        </div>
+    </nav>
 </body>
 
 </html>
