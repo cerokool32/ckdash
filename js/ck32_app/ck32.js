@@ -13,5 +13,4 @@ ck32.config(function ($routeProvider) {
 
 ck32.controller('BasicCtrl', function DemoCtrl($scope) {
 
-
 });
