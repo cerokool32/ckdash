@@ -53,3 +53,11 @@
     max-width: 400px;
     display: block;
 }
+
+.field:has(input.ng-invalid) {
+    color: red;
+}
+
+.ng-invalid {
+    color: red;
+}
