@@ -1,5 +1,5 @@
 var ck32 = angular
-    .module('ck32', ['ngRoute', 'ui.bootstrap']);
+    .module('ck32', ['ngRoute', 'ck32_sidenav']);
 
 ck32.config(function ($routeProvider) {
     $routeProvider
@@ -11,6 +11,4 @@ ck32.config(function ($routeProvider) {
         });
 });
 
-ck32.controller('BasicCtrl', function DemoCtrl($scope) {
-
-});
+ck32.controller('BasicCtrl', function DemoCtrl($scope, $aside) {});
