@@ -61,3 +61,7 @@
 .ng-invalid {
     color: red;
 }
+
+.error{
+    color: red !important
+}

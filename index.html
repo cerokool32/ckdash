@@ -131,11 +131,12 @@
                 </ul>
             </div>
         </nav>
-        <div class="container">
+        <form name="form" novalidate>
             <div class="field">
                 <label ng-show="betterField" class="show-hide">Better field</label>
-                <input type="text" class="form-control" ng-model="betterField" placeholder="Better field" />
+                <input name="betterfield" type="text" class="form-control" ng-model="betterField" placeholder="Better field" />
             </div>
+            </form>
             <div class="field">
                 <label ng-show="betterField2" class="show-hide">Better select</label>
                 <select class="form-control input-sm short-input" ng-model="betterField2">
@@ -144,7 +145,7 @@
                     <option value="2">Option 2</option>
                 </select>
             </div>
-        </div>
+
     </treasure-overlay-spinner>
 </body>
 
